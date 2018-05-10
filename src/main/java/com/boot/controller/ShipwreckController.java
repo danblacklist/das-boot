@@ -43,3 +43,5 @@ public class ShipwreckController {
 	}
 
 }
+
+/*Google - Spring boot common application properties.*/
