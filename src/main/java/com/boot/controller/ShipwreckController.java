@@ -44,14 +44,14 @@ public class ShipwreckController {
 
 		Optional<Shipwreck> existing = sr.findById(id);
 		
+		existing.get().setCondition(shipwreck.getCondition());
+		existing.get().setDepth(shipwreck.getDepth());
+		existing.get().setDescription(shipwreck.getDescription());
+		existing.get().setLatitude(shipwreck.getLatitude());
+		existing.get().setLongitude(shipwreck.getLongitude());
+		existing.get().setName(shipwreck.getName());
+		existing.get().setYearDiscovered(shipwreck.getYearDiscovered());
 		
-		
-		BeanUtils.copyProperties(shipwreck, existing.get());
-		System.out.println(existing.get().getDepth());
-		System.out.println(existing.get().getCondition());
-		System.out.println(existing.get().getDescription());
-		System.out.println(existing.get().getName());
-		System.out.println(existing.get().getId());		
 		return sr.saveAndFlush(existing.get());
 	}
 
